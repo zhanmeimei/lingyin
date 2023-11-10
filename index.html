@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>古建奇观</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+	
+	<style>
+		
+
+		
+		body{
+			    background-image:url("js/mune3.jpeg");
+		      	background-repeat:no-repeat;
+		      	background-size:cover;
+				background-attachment: fixed;/* 设置背景图基于容器大小伸缩*/
+				width: 1600px;
+		      }
+		.menu{
+			color: hotpink;
+			font-size: 25px;
+			font-weight: bold;
+			display:flex;
+			margin-top: 300px;
+		}
+		
+		.zhaopian{
+			height:500px;
+			margin:300px auto;
+			display:flex;
+			
+		}
+		.zhaopian img{
+			font-size: 20px;
+			
+			height:300px
+			align-content: space-between;
+		}
+		.p1{
+			
+			height:500px;
+		}
+		a:hover img{
+		        opacity:0.5;
+		      }	 
+			  
+		.qianyan{
+			margin: 50px auto;
+			display: flex;
+			height:50px;
+			
+		}
+		.qianyan1{
+			margin-left:710px;
+			
+			
+		}
+		button:hover{
+			background-color:wheat;
+			opacity:0.5;
+		}
+		
+		a{
+			font-size: 20px;
+			font-weight: bolder;
+			color:wheat;
+			text-decoration:none;
+		}
+		a:hover{
+			color:pink;
+		}
+			  
+	</style>
+	<body>
+
+		<div class="qianyan">
+			<div class="fist">
+				<a herf="js/main.html"><img src="js/fanhui.png" width="50px" height="50px"/></a>
+			</div> 
+			<div class="qianyan1">
+		       <button id="preface-button">前言</button>
+			</div>
+		</div>
+		  <div id="preface-overlay">
+		    <div class="preface-content">
+		      <h2>前言</h2>
+		      
+			  <p>"古建筑是我们宝贵的文化遗产，代表着丰富的历史和文化内涵。通过其独特的建筑风格、艺术技巧和文化符号，古建筑展示了我们祖先智慧的结晶和对美的追求。
+			  然而，随着时间的推移和现代化进程的加速，许多古建筑正面临着存亡的威胁。</p>
+			  <p>在这个背景下，杭州灵隐寺作为我国珍贵的古建筑之一，具有重要的历史价值和文化意义。成立于公元326年，灵隐寺是我国佛教寺庙中保存最完整、规模最大的之一。
+寺内的建筑风格兼具北方和南方佛教建筑特色，屹立于山水之间，每年吸引着众多游客和虔诚的信徒前来朝拜。</p>
+			  <p>然而，许多其他历史古建筑并非如灵隐寺般幸运。在城市化和现代化进程中，一些宝贵的古建筑因为缺乏保护而面临破坏、拆除或遗失的风险。
+这不仅剥夺了我们今后代与过去沟通的机会，也使得我们损失了珍贵的文化遗产。</p>
+<p>因此，呼吁大家共同参与古建筑的保护工作。我们可以通过加强法律保护、增加文化教育、开展修复和维护工作以及促进公众意识的提升来实现这一目标。
+保护古建筑不仅是对历史的尊重，更是为了将这份无价的文化遗产传承下去。</p>
+
+		      <button id="close-button">关闭</button>
+		    </div>
+		  </div>
+		
+		  <script>
+		    const prefaceButton = document.getElementById('preface-button');
+		    const closeButton = document.getElementById('close-button');
+		    const overlay = document.getElementById('preface-overlay');
+		
+		    // 当前言按钮被点击时显示介绍布局
+		    prefaceButton.addEventListener('click', function() {
+		      overlay.style.display = 'block';
+		    });
+		
+		    // 当关闭按钮被点击时隐藏介绍布局
+		    closeButton.addEventListener('click', function() {
+		      overlay.style.display = 'none';
+		    });
+		  </script>
+
+		
+	
+	<div class="zhaopian">
+		<div class="p1">
+			<div class="ch1"><a href="js/history.html">历史里的它</a></div>
+			<a href="js/history.html" target="_blank" title="历史里的它"><img src="js/old1.jpg"  width="418px" height="300px"/></a>
+		</div>
+		
+		<div class="p2">
+			<div class="ch2"><a href="js/history.html">故事里的它</a></div>
+			<a href="js/history.html" target="_blank" title="故事里的它"><img src="js/story.jpg" width="418px" height="300px" /></a>
+		</div>
+		<div class="p3">
+			<div class="ch3"><a href="js/history.html">灵隐一日游</a></div>
+			<a href="js/history.html" target="_blank" title="灵隐一日游"><img src="js/yiriyou.jpg" width="418px" height="300px"/></a>
+		</div>
+		<div class="p4">
+			<div class="ch4"><a href="js/history.html">文明保卫战</a></div>
+			<a href="js/history.html" target="_blank" title="文明你我他"><img src="js/wenming.jpg"  width="418px" height="300px"/></a>
+		</div>
+	</div>
+	</body>
+</html>
