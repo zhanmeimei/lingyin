@@ -1,0 +1,145 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title>古建保护</title>
+     <style>
+	 .biaoti{
+		 font-size: 30px;
+		 font-weight: bolder;
+		 height:100px;
+		 text-align: center;
+		 justify-content: center;
+		 align-items: center;
+		 line-height:100px;
+	 }
+	 .main{
+		 display:flex;
+		 justify-content: center;
+		 align-items: center;
+		 flex-direction: row;
+	 }
+	 .cont{
+     			width: 330px;
+     			border:1px solid #14324F;
+     			overflow: hidden;
+     			margin-right: 20px;
+     		}
+     		.show{
+     			width: 330px;
+     			height: 342px;
+     			position: relative;
+     		}
+     		#img1 {
+     			width: 330px;
+     			height: 342px;
+     			position: absolute;
+     			top:500px;
+     			transition: all 1s ease ;
+     
+     		}
+			#img2 {
+				width: 330px;
+				height: 342px;
+				position: absolute;
+				top:500px;
+				transition: all 1s ease ;
+			    cursor: pointer; 
+			}
+			#img3 {
+				width: 330px;
+				height: 342px;
+				position: absolute;
+				top:500px;
+				transition: all 1s ease ;
+			     
+			}
+     		.wenzi{
+     			width: 230px;
+     			text-align: center;
+     			margin-top: 10px;
+     			margin-bottom: 20px;
+				justify-content: center;
+				align-items: center;
+     
+     		}
+     		.hr{
+     			width: 80px;
+     			margin: 20px  auto;
+     			border-color:#14324F;
+     		}
+			/* CSS3 Animation for img2 */
+			    @keyframes slideRight {
+			        from { transform: translateX(-50%); opacity: 0; }
+			        to { transform: translateX(0); opacity: 1; }
+			    }
+			    #img2 {
+			        animation: slideRight 0.5s ease-out forwards;
+			    }
+			
+			    /* CSS3 Animation for img3 */
+			    @keyframes fadeIn {
+			        from { opacity: 0; }
+			        to { opacity: 1; }
+			    }
+			    #img3 {
+			        animation: fadeIn 0.5s ease-out forwards;
+			    }
+				.cont:hover {
+				    transform: scale(1.1);
+				    transition: transform 0.3s ease-in-out;
+				}
+     	</style>
+     	<script type="text/javascript">
+     		window.onload = move;
+     		function move(){
+     			document.getElementById("img1").style.top="0px";
+				document.getElementById("img2").style.top="0px";
+				document.getElementById("img3").style.top="0px";
+     		}
+			function showimg(){
+				document.getElementById("img2").src="js/howdo2.jpg";
+			}
+			function hideimg(){
+				document.getElementById("img2").src="js/howdo.webp";
+			}
+     	</script>
+     </head>
+     <body>
+		 <div class="biaoti">古建筑保护</div>
+		<div class="main">
+     	<div class="cont">
+     		<div class="show">
+     			<img id="img1" src="js/historytu.gif">
+     		</div>
+     		<div class="wenzi">
+     			为何保护
+     			<hr class="hr">
+     			WHY PROTECK
+     		</div>
+     	</div>
+		
+		<div class="cont">
+			<div class="show">
+				<img id="img2" src="js/howdo.webp" onmousemove="showimg()"  onmouseout="hideimg()">
+				
+			</div>
+			<div class="wenzi">
+				怎么保护
+				<hr class="hr">
+				HOW PROTECK
+			</div>
+		</div>
+		
+		<div class="cont">
+			<div class="show">
+				<img id="img3" src="js/whodo.png" >
+			</div>
+			<div class="wenzi">
+				谁去保护
+				<hr class="hr">
+				WHO PROTECK
+			</div>
+		</div>
+		
+		</div>
+ </html>
