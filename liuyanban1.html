@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>留言板</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        /* ...你的其他CSS样式... */
+		html,body{
+				width:100%;
+			height:100%;
+			margin:0px;
+			padding:0px;
+			background:url("js/liuyanbg.webp") no-repeat fixed center/cover;
+		}
+		section{
+			width:700px;
+			margin:50px auto;
+				padding: 2em;
+				background: #f4f1de;
+				border: 1px solid #d4bba1;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.writeMsg{
+				width:650px;
+			background-color:#FFFFFF;
+			margin:0px auto;
+			border-radius:5px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.writeMsg div{
+				width:630px;
+			margin:0px auto;
+		}
+		.writeMsg div:nth-child(1){
+				height:50px;
+			line-height:50px;
+		}
+		#content{
+		  width:623px;
+			height:100px;
+			outline:none;
+			resize:none;
+		}
+		.writeMsg div:nth-child(3){
+				height:50px;
+			line-height:50px;
+			text-align:right;
+		}
+		#sendBtn{
+				background-color:#FF8140;
+			color:#FFFFFF;
+			width:100px;
+			height:30px;
+			border-style:none;
+			outline:none;
+			border-radius:5px;
+			cursor:pointer;
+		}
+		.msgList{
+				width:650px;
+			background-color:#FFFFFF;
+			margin:10px auto;
+			border-radius:5px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.msgList img{
+				width:70px;
+			height:70px;
+			border-radius:70px;
+		}
+		.msgList>div:nth-child(1){
+			width:630px;
+			margin:0px auto;
+				display:flex;
+			justify-content:space-between;
+		}
+		.msgList>div:nth-child(2){
+			width:630px;
+			margin:0px auto;
+			line-height:70px;
+				border-top:1px solid #DEE1E6;
+		}
+		.msgList>div:nth-child(1)>div:nth-child(2){
+				width:100%;
+			margin-left:10px;
+		}
+		.msgList>div:nth-child(1)>div:nth-child(2) div{
+				line-height:35px
+		}
+		.msgList>div:nth-child(1)>div:nth-child(3) {
+		            display: flex;
+		            align-items: center;
+		            justify-content: flex-end;
+		        }
+		        .msgList input {
+		            border-style: none;
+		            outline: none;
+		            color: #FFFFFF;
+		            background-color: #FA6A1F;
+		            cursor: pointer;
+		            padding: 5px 10px;
+		            border-radius: 5px;
+		        }
+		        #sendBtn {
+		            background-color: #4CAF50;
+		            color: #FFFFFF;
+		            width: 100px;
+		            height: 30px;
+		            border-style: none;
+		            outline: none;
+		            border-radius: 5px;
+		            cursor: pointer;
+		        }
+		        button {
+		            display: block;
+		            margin-top: 20px;
+		            padding: 10px 20px;
+		            background-color: #4CAF50;
+		            color: white;
+		            border: none;
+		            border-radius: 5px;
+		            cursor: pointer;
+		        }
+    </style>
+    <!-- Your JavaScript code -->
+	<script type="text/javascript" src="js/jquery-3.7.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		  $("#sendBtn").click(function(){
+			  if($("#content").val() == ""){
+				  alert("请输入留言内容！");
+				  $("#content").focus();
+			  }
+			  else{
+				  var d = new Date();
+				  var face = Math.round(Math.random()*7);
+				  var userName = "逢考必过";
+				  var date = d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate();
+				  var content = $("#content").val();
+				  var html = "";
+				  html += "<div class='msgList'>";
+				  html += "<div>";
+				  html += "<div><img src='http://www.yyfun001.com/res/jquery/images/modle"+face+".jpg' /></div>";
+				  html += "<div>";
+				  html += "<div>"+userName+"</div>";
+				  html += "<div>"+date+"</div>";
+				  html += "</div>";
+				  html += "<div><input type='button' value='删除' onclick='delMsg(this)' /></div>";
+				  html += "</div>";
+				  html += "<div>"+content+"</div>";
+				  html += "</div>";				  
+				  $("section").append(html);				  
+				  $("#content").val("");
+				  $("#content").focus();
+			  }
+		  });
+		          $('#close').click(function() {
+		          window.location.href ='whodo.html';
+		          
+		      });  
+		  
+	  })
+	  function delMsg(node){
+		  $(node).parent().parent().parent().remove();
+	  }
+	</script>
+	</head>
+	<body>
+		<section><!-- 发表留言 -->
+		<div class="writeMsg">
+		    <div>对古建筑保护有什么好的建议想要提出来？</div>
+			<div>
+				<textarea id="content"></textarea></div>
+				<div>
+					<input id="sendBtn" type="button" value="发表" /></div>
+		</div><!-- 留言显示区域 -->
+				<div class='msgList'>
+					<div>
+						<div><img src="js//liuyantou.jpg" /></div>
+						<div>
+							<div>李李</div>
+							<div>2023年8月17日</div>
+						</div>
+						<div><input type='button' value='删除' onclick='delMsg(this)' /></div>
+					</div>
+						<div>定期对古建筑进行专业维护和修缮，防止其破损和腐朽。</div>
+				</div>
+				<button id="close">关闭</button> 
+	</section>
+	</body>
+	</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>谁来保护</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .left-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .left-area, .text-container {
+            width: 45%;
+        }
+
+        .left-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left-area img {
+            width: 100%;
+            height: auto;
+        }
+
+        .left-area button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .text-container p {
+            text-indent: 2em;
+            line-height: 1.6em;
+        }
+
+        .text-container h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+		
+		.form-group {
+		    margin-bottom: 10px;
+		}
+		
+		label {
+		    display: block;
+		    font-weight: bold;
+		    margin-bottom: 5px;
+		}
+		
+		input[type="text"],
+		textarea {
+		    width: 100%;
+		    padding: 5px;
+		}
+		
+		select {
+		    width: 100%;
+		    padding: 5px;
+		}
+		
+		button {
+		    display: block;
+		    margin-top: 20px;
+		    padding: 10px 20px;
+		    background-color: #4CAF50;
+		    color: white;
+		    border: none;
+		    cursor: pointer;
+		}
+		
+		.success-message {
+		    color: green;
+		    margin-top: 10px;
+			
+		}
+		
+		.modal {
+		            position: fixed;
+		            z-index: 1;
+		            left: 0;
+		            top: 0;
+		            width: 100%;
+		            height: 100%;
+		            overflow: auto;
+		            background-color: rgba(0,0,0,0.4);
+		            display: none;
+		        }
+		
+		        .modal-content {
+		            background-color: #fefefe;
+		            margin: 15% auto;
+		            padding: 20px;
+		            border: 1px solid #888;
+		            width: 80%;
+		        }
+		
+		
+		
+    </style>
+</head>
+<body>
+    <div class="left-container">
+        <div class="left-area">  
+            <img src="js/yiriyou.jpg" alt="古建筑图片">
+            <button id="survey-btn">调查问卷</button>
+            <button id="suggestion-btn">留言建议</button>
+        </div>  
+
+        <div class="text-container"> 
+            <h1>保护文物，人人有责</h1> 
+            <!-- 你的文章内容 -->
+			<p>那么，谁应该来保护古建筑呢？</p>
+			<p>首先，政府应该承担起保护古建筑的责任。政府是公共利益的代表，有责任保护文化遗产，维护历史风貌。政府可以制定相关法律法规，规范古建筑的保护和管理，同时加大对违法行为的惩处力度，确保古建筑得到有效保护。</p>  
+			<p>其次，社会各界也应该参与古建筑的保护工作。古建筑的保护不仅需要政府的支持，更需要全社会的共同努力。社会团体、企业和个人都可以通过各种方式参与到古建筑保护中来，例如捐赠资金、参与修复工程、提供志愿服务等。只有全社会共同关注和参与，才能更好地保护古建筑。</p>
+			<p>最后，每一个人都应该树立保护古建筑的意识。保护古建筑不仅是政府的责任，更是每一个公民的义务。我们应该从自身做起，从小事做起，不随意破坏古建筑，不乱涂乱画，同时也要积极宣传和倡导保护古建筑的理念，让更多的人了解和参与到保护工作中来。</p>
+            <p>总之，保护古建筑需要政府、社会各界和每一个人的共同努力。只有大家齐心协力，才能让这些宝贵的历史文化遗产得到有效保护和传承。</p>
+        </div>  
+    </div> 
+
+    <!-- 你的JavaScript代码 -->
+	<div id="myModal" class="modal">
+	        <div class="modal-content">
+	
+	<div class="container">
+	    <h1>古建筑保护问卷调查</h1>
+	    <form id="survey-form">
+	        
+			
+			<div class="form-group">  
+			        <label >1.你是否了解古建筑保护的重要性？</label>  
+			        <input type="radio" name="understanding" value="true" required> 是
+			        <input type="radio" name="understanding" value="false"> 否
+			    </div>  
+				
+			    <div class="form-group">  
+			        <label for="information">2.你通常通过什么方式了解古建筑保护的相关信息？（多选）</label>  
+			        <div class="checkbox">  
+			            <label>  
+			                <input type="checkbox" id="information-a" value="a"> A. 电视节目  
+			            </label>  
+			        </div>  
+			        <div class="checkbox">  
+			            <label>  
+			                <input type="checkbox" id="information-b" value="b"> B. 网络平台  
+			            </label>  
+			        </div>  
+			        <div class="checkbox">  
+			            <label>  
+			                <input type="checkbox" id="information-c" value="c"> C. 报纸杂志  
+			            </label>  
+			        </div>  
+			        <div class="checkbox">  
+			            <label>  
+			                <input type="checkbox" id="information-d" value="d"> D. 朋友推荐  
+			            </label>  
+			        </div>  
+		
+	        <div class="form-group">
+	            <label>3.你是否了解古建筑保护:</label>
+	            <input type="radio" name="konw" value="true" required> 是
+	            <input type="radio" name="konw" value="false"> 否
+	        </div>
+	
+			<div class="form-group">
+	                        <label>4.你是否曾经亲自参与过古建筑保护活动？</label>
+			                <input type="radio" name="participated" value="true" required> 是
+			                <input type="radio" name="participated" value="false"> 否
+			            </div>
+			
+			            <div class="form-group">
+			                <label>5.你认为古建筑保护面临的最大挑战是什么？</label>
+			                <input type="checkbox" name="challenges" value="A"> 资金不足
+			                <input type="checkbox" name="challenges" value="B"> 公众意识不强
+			                <input type="checkbox" name="challenges" value="C"> 政府支持不够
+			                <input type="checkbox" name="challenges" value="D"> 缺乏专业人才
+			            </div>
+			
+			            <div class="form-group">
+			                <label>6.你是否认为现代建筑可以与古建筑和谐共存？</label>
+			                <input type="radio" name="coexist" value="true" required> 是
+			                <input type="radio" name="coexist" value="false"> 否
+			            </div>
+			
+			            <div class="form-group">
+			                <label>7.你认为如何提高公众对古建筑保护的关注度？</label>
+			                <input type="checkbox" name="improveAwareness" value="A"> 加强宣传教育
+			                <input type="checkbox" name="improveAwareness" value="B"> 增加保护区的旅游开发力度
+			                <input type="checkbox" name="improveAwareness" value="C"> 提高违法成本
+			                <input type="checkbox" name="improveAwareness" value="D"> 鼓励民间团体参与保护工作
+			            </div>
+			
+			            <div class="form-group">
+			                <label>8.你是否支持将古建筑列为国家级或世界级文化遗产？</label>
+			                <input type="radio" name="supportHeritage" value="true" required> 是
+			                <input type="radio" name="supportHeritage" value="false"> 否
+			            </div>
+			
+			            <div class="form-group">
+			                <label>9.你认为古建筑保护应由哪个部门主导？</label>
+			                <select name="leadDepartment" required>
+			                    <option value="">请选择</option>
+			                    <option value="A">文化部门</option>
+			                    <option value="B">旅游部门</option>
+			                    <option value="C">建设部门</option>
+			                    <option value="D">教育部门</option>
+			                </select>
+			            </div>
+						
+						<div class="form-group">
+						                <label>10.你是否认为古建筑保护应该优先于城市现代化发展？</label>
+						                <input type="radio" name="priority" value="true" required> 是
+						                <input type="radio" name="priority" value="false"> 否
+						            </div>
+						
+						            <div class="form-group">
+						                <label>11.你认为古建筑保护的最佳方式是？</label>
+						                <input type="checkbox" name="bestApproach" value="A"> 原址保护，修旧如旧
+						                <input type="checkbox" name="bestApproach" value="B"> 异地迁建，保存原貌
+						                <input type="checkbox" name="bestApproach" value="C"> 作为历史遗迹，适度开发旅游资源
+						                <input type="checkbox" name="bestApproach" value="D"> 融入现代城市规划，进行功能改造
+						            </div>
+									
+									<div class="form-group">
+									    <label for="reason">12.你为何对古建筑保护感兴趣？</label>
+									    <textarea id="reason"></textarea>
+									</div>
+									<div class="form-group">
+									    <label for="advise">13.对保护中国古建筑你有什么建议？</label>
+									    <textarea id="advise"></textarea>
+									</div>
+		
+	        <div class="btn" style="display: flex;">
+			<button type="submit">提交</button>
+			<div style="width: 50px;"></div>
+			<button type="close" id="close-button">关闭</button>
+			</div>
+	    </form>
+	    <div id="success-message" class="success-message"></div>
+	</div>
+	
+	
+	            
+	        </div>
+	    </div>
+	
+	
+	
+	
+	<script src="js/jquery-3.7.1.js"></script>
+	<script>
+	    $(document).ready(function() {
+	        $('#survey-form').submit(function(event) {
+				event.preventDefault(); // 阻止默认表单提交行为
+	                $('#success-message').html('提交成功！');
+					
+					
+	            alert('提交成功！');
+	        });
+			
+			/*$('#close-button').click(function() {  
+			        // 你可以选择隐藏整个body或者只隐藏某个元素，这里只是隐藏消息框  
+			        $('.container').hide();  
+			    });  
+				
+			 $('#survey-btn').click(function() {  
+			       $(".container").css("display","block");
+			    });  
+			      
+			    $('#suggestion-btn').click(function() {  
+			        window.location.href ='whosuggestion.html';
+			    });  */	
+				
+			$('#survey-btn').click(function() {
+			        $('#myModal').css("display", "block");
+			    });
+			
+			    // 点击关闭按钮
+			    $('#close-button').click(function() {
+			        $('#myModal').css("display", "none");
+			    });
+			
+			    // 点击问卷以外的地方会关闭问卷
+			    $(window).click(function(event) {
+			        if ($(event.target).is('.modal')) {
+			            $('.modal').css("display", "none");
+			        }
+			    });
+			
+			     
+				   $('#suggestion-btn').click(function() {  
+				       window.location.href ='liuyanban1.html';
+				   });  	
+				
+				
+	    });
+	</script>
+	
+	
+</body>
+</html>
