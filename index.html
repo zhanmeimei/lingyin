@@ -1,141 +1,156 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>古建奇观</title>
-		
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-	</head>
+<head>
+    <meta charset="utf-8" />
+    <title>古建奇观</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+</head>
+<style>
+body {
+    background-image:url("js/mainbg.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;/* 设置背景图基于容器大小伸缩*/
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
 	
-	<style>
-		
+}
 
-		
-		body{
-			    background-image:url("js/mune3.jpeg");
-		      	background-repeat:no-repeat;
-		      	background-size:cover;
-				background-attachment: fixed;/* 设置背景图基于容器大小伸缩*/
-				width: 1600px;
-		      }
-		.menu{
-			color: hotpink;
-			font-size: 25px;
-			font-weight: bold;
-			display:flex;
-			margin-top: 300px;
-		}
-		
-		.zhaopian{
-			height:500px;
-			margin:300px auto;
-			display:flex;
-			
-		}
-		.zhaopian img{
-			font-size: 20px;
-			
-			height:300px
-			align-content: space-between;
-		}
-		.p1{
-			
-			height:500px;
-		}
-		a:hover img{
-		        opacity:0.5;
-		      }	 
-			  
-		.qianyan{
-			margin: 50px auto;
-			display: flex;
-			height:50px;
-			
-		}
-		.qianyan1{
-			margin-left:710px;
-			
-			
-		}
-		button:hover{
-			background-color:wheat;
-			opacity:0.5;
-		}
-		
-		a{
-			font-size: 20px;
-			font-weight: bolder;
-			color:wheat;
-			text-decoration:none;
-		}
-		a:hover{
-			color:pink;
-		}
-		
-	</style>
-	<body>
+.menu {
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+	margin-top: 50px;
+}
 
-		<div class="qianyan">
-			<div class="fist">
-				<a herf="https://muggle1003.github.io/muggle1003/"><img src="js/fanhui.png" width="50px" height="50px"/></a>
-			</div> 
-			<div class="qianyan1">
-		       <button id="preface-button">前言</button>
-			</div>
-		</div>
-		  <div id="preface-overlay">
-		    <div class="preface-content">
-		      <h2>前言</h2>
-		      
-			  <p>"古建筑是我们宝贵的文化遗产，代表着丰富的历史和文化内涵。通过其独特的建筑风格、艺术技巧和文化符号，古建筑展示了我们祖先智慧的结晶和对美的追求。
-			  然而，随着时间的推移和现代化进程的加速，许多古建筑正面临着存亡的威胁。</p>
-			  <p>在这个背景下，杭州灵隐寺作为我国珍贵的古建筑之一，具有重要的历史价值和文化意义。成立于公元326年，灵隐寺是我国佛教寺庙中保存最完整、规模最大的之一。
-寺内的建筑风格兼具北方和南方佛教建筑特色，屹立于山水之间，每年吸引着众多游客和虔诚的信徒前来朝拜。</p>
-			  <p>然而，许多其他历史古建筑并非如灵隐寺般幸运。在城市化和现代化进程中，一些宝贵的古建筑因为缺乏保护而面临破坏、拆除或遗失的风险。
-这不仅剥夺了我们今后代与过去沟通的机会，也使得我们损失了珍贵的文化遗产。</p>
-<p>因此，呼吁大家共同参与古建筑的保护工作。我们可以通过加强法律保护、增加文化教育、开展修复和维护工作以及促进公众意识的提升来实现这一目标。
-保护古建筑不仅是对历史的尊重，更是为了将这份无价的文化遗产传承下去。</p>
+.menu div {
+    flex-basis: 23%;
+    margin: 1%;
+    text-align: center;
+}
 
-		      <button id="close-button">关闭</button>
-		    </div>
-		  </div>
-		
-		  <script>
-		    const prefaceButton = document.getElementById('preface-button');
-		    const closeButton = document.getElementById('close-button');
-		    const overlay = document.getElementById('preface-overlay');
-		
-		    // 当前言按钮被点击时显示介绍布局
-		    prefaceButton.addEventListener('click', function() {
-		      overlay.style.display = 'block';
-		    });
-		
-		    // 当关闭按钮被点击时隐藏介绍布局
-		    closeButton.addEventListener('click', function() {
-		      overlay.style.display = 'none';
-		    });
-		  </script>
+.menu img {
+    width: 100%;
+    height: auto;
+    min-height: 250px; /* 设置最小高度 */
+    border-radius: 5px;
+    transition: transform .2s;
+}
 
-		
-	
-	<div class="zhaopian">
-		<div class="p1">
-			<div class="ch1"><a href="choose1.html">历史里的它</a></div>
-			<a href="choose1.html" target="_blank" title="历史里的它"><img src="js/old1.jpg"  width="418px" height="300px"/></a>
+.menu img:hover {
+    transform: scale(1.1);
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: color .2s;
+}
+
+.menu a:hover {
+    color: #4CAF50;
+}
+
+a.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 36px;
+    text-decoration: none;
+}
+
+.qianyan {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.qianyan button {
+    font-size: 2em;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.qianyan button:hover {
+    background-color: #45a049;
+}
+
+</style>
+<body>
+    <a href="https://muggle1003.github.io/muggle1003/" class="back-button"><i class="fa fa-arrow-left"></i></a>
+    <div class="qianyan">
+        <button id="preface-button">前言</button>
+    </div>
+    <div id="preface-overlay">
+        <div class="preface-content">
+            <h2>前言</h2>
+            <!-- 省略了部分文字 -->
+			<p>"古建筑是我们宝贵的文化遗产，代表着丰富的历史和文化内涵。通过其独特的建筑风格、艺术技巧和文化符号，古建筑展示了我们祖先智慧的结晶和对美的追求。
+						  然而，随着时间的推移和现代化进程的加速，许多古建筑正面临着存亡的威胁。</p>
+						  <p>在这个背景下，杭州灵隐寺作为我国珍贵的古建筑之一，具有重要的历史价值和文化意义。成立于公元326年，灵隐寺是我国佛教寺庙中保存最完整、规模最大的之一。
+			寺内的建筑风格兼具北方和南方佛教建筑特色，屹立于山水之间，每年吸引着众多游客和虔诚的信徒前来朝拜。</p>
+						  <p>然而，许多其他历史古建筑并非如灵隐寺般幸运。在城市化和现代化进程中，一些宝贵的古建筑因为缺乏保护而面临破坏、拆除或遗失的风险。
+			这不仅剥夺了我们今后代与过去沟通的机会，也使得我们损失了珍贵的文化遗产。</p>
+			<p>因此，呼吁大家共同参与古建筑的保护工作。我们可以通过加强法律保护、增加文化教育、开展修复和维护工作以及促进公众意识的提升来实现这一目标。
+			保护古建筑不仅是对历史的尊重，更是为了将这份无价的文化遗产传承下去。</p>
+			
+            <button id="close-button">关闭</button>
+        </div>
+    </div>
+    <script>
+        const prefaceButton = document.getElementById('preface-button');
+        const closeButton = document.getElementById('close-button');
+        const overlay = document.getElementById('preface-overlay');
+
+        prefaceButton.addEventListener('click', function() {
+            overlay.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', function() {
+            overlay.style.display = 'none';
+        });
+    </script>
+    <div class="menu">
+        <div>
+            <a href="https://muggle1003.github.io/muggle1003/lishi.html">
+                <img src="js/old1.jpg" alt="历史里的它">
+                <p>历史里的它</p>
+            </a>
+        </div>
+		<div>
+		    <a href="story.html">
+		        <img src="js/story.jpg" alt="故事里的它">
+		        <p>故事里的它</p>
+		    </a>
+		</div>
+		<div>
+		    <a href="https://muggle1003.github.io/muggle1003/oneday.html">
+		        <img src="js/yiriyou.jpg" alt="灵隐一日游">
+		        <p>灵隐一日游</p>
+		    </a>
 		</div>
 		
-		<div class="p2">
-			<div class="ch2"><a href="story.html">故事里的它</a></div>
-			<a href="story.html" target="_blank" title="故事里的它"><img src="js/story.jpg" width="418px" height="300px" /></a>
+		<div>
+		    <a href="wenming.html">
+		        <img src="js/wenming.jpg" alt="文明保卫战">
+		        <p>文明保卫战</p>
+		    </a>
 		</div>
-		<div class="p3">
-			<div class="ch3"><a href="you.html">灵隐一日游</a></div>
-			<a href="you.html" target="_blank" title="灵隐一日游"><img src="js/yiriyou.jpg" width="418px" height="300px"/></a>
-		</div>
-		<div class="p4">
-			<div class="ch4"><a href="wenming.html">文明保卫战</a></div>
-			<a href="wenming.html" target="_blank" title="文明你我他"><img src="js/wenming.jpg"  width="418px" height="300px"/></a>
-		</div>
-	</div>
-	</body>
+    </div>
+</body>
 </html>
+

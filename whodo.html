@@ -120,6 +120,16 @@
 		
 		
 		
+		
+		 #back-btn {
+		        margin-top: 20px;
+		        padding: 10px 20px;
+		        background-color: #4CAF50;
+		        color: white;
+		        border: none;
+		        cursor: pointer;
+		    }
+		
     </style>
 </head>
 <body>
@@ -128,6 +138,7 @@
             <img src="js/yiriyou.jpg" alt="古建筑图片">
             <button id="survey-btn">调查问卷</button>
             <button id="suggestion-btn">留言建议</button>
+			<button id="back-btn"><i class="fa fa-arrow-left"></i> 返回</button>
         </div>  
 
         <div class="text-container"> 
@@ -281,18 +292,7 @@
 	            alert('提交成功！');
 	        });
 			
-			/*$('#close-button').click(function() {  
-			        // 你可以选择隐藏整个body或者只隐藏某个元素，这里只是隐藏消息框  
-			        $('.container').hide();  
-			    });  
-				
-			 $('#survey-btn').click(function() {  
-			       $(".container").css("display","block");
-			    });  
-			      
-			    $('#suggestion-btn').click(function() {  
-			        window.location.href ='whosuggestion.html';
-			    });  */	
+			
 				
 			$('#survey-btn').click(function() {
 			        $('#myModal').css("display", "block");
@@ -316,7 +316,15 @@
 				   });  	
 				
 				
+			$('#back-btn').click(function() {
+			            window.location.href ='wenming.html';
+			        });	
+				
+				
+				
 	    });
+		
+	
 	</script>
 	
 	

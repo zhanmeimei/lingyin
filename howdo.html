@@ -87,17 +87,42 @@
 	}
 	
 
+.back-button {
+    color: #3e3532;
+    text-decoration: none;
+    padding: 0.5em;
+    transition: all 0.3s;
+	 position: absolute;
+	 right: 20px;
+}
+
+.back-button:hover {
+    background-color: #bfa07a;
+    border-radius: 5px;
+}
+
+
+
 
 </style>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- 省略了其他代码 -->
 	
 </head>
 <body>
     <nav>
+		<a href="wenming.html" class="back-button"><i class="fa fa-arrow-left"></i> 返回</a>  
         <ul id="navbar">
+			  
             <li><a href="#aging">老化损失</a></li>
             <li><a href="#damage">人为破坏</a></li>
             <li><a href="#disaster">自然灾害</a></li>
-        </ul>
+			 
+		</ul>
+		
+		
     </nav>
     <div class="content">
         <div id="aging" class="page">
